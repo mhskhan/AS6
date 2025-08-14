@@ -54,7 +54,7 @@ app.post("/api/user/login", (req, res) => {
         });
 });
 
-// Protected routes
+// Protected route
 app.get("/api/user/favourites", passport.authenticate('jwt', { session: false }), (req, res) => {
     userService.getFavourites(req.user._id)
         .then(data => {
